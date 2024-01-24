@@ -51,8 +51,8 @@
             const textElement = document.querySelector('h1');
 
             function randomizePosition() {
-                const x = Math.random() * window.innerWidth;
-                const y = Math.random() * window.innerHeight;
+                const x = Math.random() * (window.innerWidth - textElement.clientWidth);
+                const y = Math.random() * (window.innerHeight - textElement.clientHeight);
                 textElement.style.transform = `translate(${x}px, ${y}px)`;
             }
 

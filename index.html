@@ -22,16 +22,21 @@
             text-align: center;
             text-shadow: 2px 2px 4px #333;
             position: absolute;
-            animation: moveText 8s infinite; /* Ajusté la durée de l'animation pour "30 ans" */
+            animation: moveText 8s infinite;
         }
 
         #birthdayText {
-            color: #fff; /* Couleur du texte "Joyeux anniversaire" */
+            color: #fff;
             animation-duration: 5s;
         }
 
         #ageText {
-            color: #00f; /* Couleur du texte "30 ans" */
+            color: #00f;
+        }
+
+        .animated-gif {
+            position: absolute;
+            animation: moveGif 10s infinite;
         }
 
         @keyframes moveText {
@@ -48,25 +53,49 @@
                 transform: translate(-50vw, 50vh);
             }
         }
+
+        @keyframes moveGif {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(30vw, -30vh);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            75% {
+                transform: translate(-30vw, 30vh);
+            }
+        }
     </style>
 </head>
 <body>
     <h1 id="birthdayText" class="animated-text">Joyeux anniversaire</h1>
     <h1 id="ageText" class="animated-text">30 ans</h1>
 
+    <img class="animated-gif" src="chemin/vers/votre/gif1.gif" alt="Description du GIF 1">
+    <img class="animated-gif" src="chemin/vers/votre/gif2.gif" alt="Description du GIF 2">
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const texts = document.querySelectorAll('.animated-text');
+            const gifs = document.querySelectorAll('.animated-gif');
 
-            function randomizePosition(textElement) {
-                const x = Math.random() * (window.innerWidth - textElement.clientWidth);
-                const y = Math.random() * (window.innerHeight - textElement.clientHeight);
-                textElement.style.transform = `translate(${x}px, ${y}px)`;
+            function randomizePosition(element) {
+                const x = Math.random() * (window.innerWidth - element.clientWidth);
+                const y = Math.random() * (window.innerHeight - element.clientHeight);
+                element.style.transform = `translate(${x}px, ${y}px)`;
             }
 
             texts.forEach(textElement => {
                 randomizePosition(textElement);
                 setInterval(() => randomizePosition(textElement), 8000);
+            });
+
+            gifs.forEach(gifElement => {
+                randomizePosition(gifElement);
+                setInterval(() => randomizePosition(gifElement), 10000);
             });
         });
     </script>

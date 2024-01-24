@@ -16,7 +16,7 @@
             background: linear-gradient(to right, #ff8c00, #ff4500);
         }
 
-        h1 {
+        .animated-text {
             font-family: 'Arial', sans-serif;
             font-size: 3em;
             color: #fff;
@@ -24,6 +24,10 @@
             text-shadow: 2px 2px 4px #333;
             position: absolute;
             animation: moveText 5s infinite;
+        }
+
+        #birthdayText {
+            animation-duration: 8s; /* Augmente la durée de l'animation pour le texte "Joyeux anniversaire" */
         }
 
         @keyframes moveText {
@@ -43,11 +47,24 @@
     </style>
 </head>
 <body>
-    <h1>Joyeux anniversaire</h1>
+    <h1 id="birthdayText" class="animated-text">Joyeux anniversaire</h1>
+    <h1 class="animated-text">30 ans</h1>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const textElement = document.querySelector('h1');
+            const texts = document.querySelectorAll('.animated-text');
 
-            function randomizePosition() {
-                const x = Math.random() * (windo
+            function randomizePosition(textElement) {
+                const x = Math.random() * (window.innerWidth - textElement.clientWidth);
+                const y = Math.random() * (window.innerHeight - textElement.clientHeight);
+                textElement.style.transform = `translate(${x}px, ${y}px)`;
+            }
+
+            texts.forEach(textElement => {
+                randomizePosition(textElement);
+                setInterval(() => randomizePosition(textElement), 5000);
+            });
+        });
+    </script>
+</body>
+</html>

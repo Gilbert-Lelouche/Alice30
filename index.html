@@ -8,23 +8,56 @@
         body {
             margin: 0;
             padding: 0;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: linear-gradient(to right, #ff8c00, #ff4500); /* Dégradé de couleur */
+            background: linear-gradient(to right, #ff8c00, #ff4500);
         }
 
         h1 {
             font-family: 'Arial', sans-serif;
             font-size: 3em;
-            color: #fff; /* Couleur du texte */
+            color: #fff;
             text-align: center;
-            text-shadow: 2px 2px 4px #333; /* Ombre du texte */
+            text-shadow: 2px 2px 4px #333;
+            position: absolute;
+            animation: moveText 5s infinite;
+        }
+
+        @keyframes moveText {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50vw, -50vh);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            75% {
+                transform: translate(-50vw, 50vh);
+            }
         }
     </style>
 </head>
 <body>
     <h1>Joyeux anniversaire</h1>
+
+    <script>
+        // Ajout d'une animation aléatoire en JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            const textElement = document.querySelector('h1');
+
+            function randomizePosition() {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                textElement.style.transform = `translate(${x}px, ${y}px)`;
+            }
+
+            setInterval(randomizePosition, 5000); // Change la position toutes les 5 secondes
+        });
+    </script>
 </body>
 </html>

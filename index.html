@@ -39,6 +39,21 @@
             animation: moveCandles 10s infinite;
         }
 
+        #text1 {
+            color: #ff0; /* Couleur du texte 1 */
+            animation: moveText1 12s infinite;
+        }
+
+        #text2 {
+            color: #0ff; /* Couleur du texte 2 */
+            animation: moveText2 15s infinite;
+        }
+
+        #text3 {
+            color: #f0f; /* Couleur du texte 3 */
+            animation: moveText3 10s infinite;
+        }
+
         .animated-gif {
             position: absolute;
             width: 100px;
@@ -77,15 +92,63 @@
                 transform: translate(100vw, 0);
             }
         }
+
+        @keyframes moveText1 {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(-50vw, -50vh);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            75% {
+                transform: translate(50vw, 50vh);
+            }
+        }
+
+        @keyframes moveText2 {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-50vh);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(50vh);
+            }
+        }
+
+        @keyframes moveText3 {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(-50vw, 50vh);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            75% {
+                transform: translate(50vw, -50vh);
+            }
+        }
     </style>
 </head>
 <body>
-    <h1 id="birthdayText" class="animated-text">Joyeux anniversaire</h1>
+    <h1 id="birthdayText" class="animated-text">Joyeux Anniversaire</h1>
     <h1 id="ageText" class="animated-text">30 ans</h1>
     <h1 id="candlesText" class="animated-text">Bougies</h1>
+    <h1 id="text1" class="animated-text">Alice</h1>
+    <h1 id="text2" class="animated-text">Gateau</h1>
+    <h1 id="text3" class="animated-text">Noel</h1>
 
-    <img class="animated-gif top-left" src="gifs/explosion.gif" alt="Description du GIF">
-    <img class="animated-gif top-right" src="gifs/batman.gif" alt="Description du GIF 2">
+    <img class="animated-gif top-left" src="explosion.gif" alt="Description du GIF">
+    <img class="animated-gif top-right" src="batman.gif" alt="Description du GIF 2">
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -93,20 +156,4 @@
             const gifs = document.querySelectorAll('.animated-gif');
 
             function randomizePosition(element) {
-                const x = Math.random() * (window.innerWidth - element.clientWidth);
-                const y = Math.random() * (window.innerHeight - element.clientHeight);
-                element.style.transform = `translate(${x}px, ${y}px)`;
-            }
-
-            texts.forEach(textElement => {
-                randomizePosition(textElement);
-                setInterval(() => randomizePosition(textElement), 8000);
-            });
-
-            gifs.forEach(gifElement => {
-                randomizePosition(gifElement);
-            });
-        });
-    </script>
-</body>
-</html>
+                const x = Math.random() * (

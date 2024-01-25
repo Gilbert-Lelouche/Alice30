@@ -36,8 +36,17 @@
 
         .animated-gif {
             position: absolute;
-            width: 100px; /* Ajustez la largeur selon vos préférences */
-            animation: moveGif 10s infinite;
+            width: 100px;
+        }
+
+        .top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .top-right {
+            top: 10px;
+            right: 10px;
         }
 
         @keyframes moveText {
@@ -54,29 +63,14 @@
                 transform: translate(-50vw, 50vh);
             }
         }
-
-        @keyframes moveGif {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(30vw, -30vh);
-            }
-            50% {
-                transform: translate(0, 0);
-            }
-            75% {
-                transform: translate(-30vw, 30vh);
-            }
-        }
     </style>
 </head>
 <body>
     <h1 id="birthdayText" class="animated-text">Joyeux anniversaire</h1>
     <h1 id="ageText" class="animated-text">30 ans</h1>
 
-    <img class="animated-gif" src="explosion.gif" alt="BOOMF">
-    <img class="animated-gif" src="batman.gif" alt="WOUSH">
+    <img class="animated-gif top-left" src="explosion.gif" alt="Description du GIF">
+    <img class="animated-gif top-right" src="batman.gif" alt="Description du GIF 2">
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -96,7 +90,6 @@
 
             gifs.forEach(gifElement => {
                 randomizePosition(gifElement);
-                setInterval(() => randomizePosition(gifElement), 10000);
             });
         });
     </script>

@@ -22,12 +22,10 @@
             text-align: center;
             text-shadow: 2px 2px 4px #333;
             position: absolute;
-            animation: moveText 8s infinite;
         }
 
         #birthdayText {
             color: #fff;
-            animation-duration: 5s;
         }
 
         #ageText {
@@ -36,7 +34,6 @@
 
         #candlesText {
             color: #0f0; /* Couleur du texte "Bougies" */
-            animation: moveCandles 10s infinite;
         }
 
         .animated-gif {
@@ -45,7 +42,7 @@
         }
 
         .top-left {
-            top: 30px;
+            top: 10px;
             left: 10px;
         }
 
@@ -75,6 +72,17 @@
             }
             50% {
                 transform: translate(100vw, 0);
+            }
+        }
+
+        /* Styles pour les petits écrans */
+        @media only screen and (max-width: 600px) {
+            .animated-text {
+                font-size: 2em;
+            }
+
+            .animated-gif {
+                width: 60px;
             }
         }
     </style>

@@ -12,7 +12,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            height: 100vh;
             background: linear-gradient(to right, #ff8c00, #ff4500);
         }
 
@@ -22,10 +22,12 @@
             text-align: center;
             text-shadow: 2px 2px 4px #333;
             position: absolute;
+            animation: moveText 8s infinite;
         }
 
         #birthdayText {
             color: #fff;
+            animation-duration: 5s;
         }
 
         #ageText {
@@ -34,12 +36,12 @@
 
         #candlesText {
             color: #0f0; /* Couleur du texte "Bougies" */
+            animation: moveCandles 10s infinite;
         }
 
         .animated-gif {
             position: absolute;
-            width: 10vw; /* Utilisation d'une unité relative pour la largeur */
-            max-width: 100px; /* Limitation de la largeur maximale */
+            width: 100px;
         }
 
         .top-left {
@@ -75,13 +77,6 @@
                 transform: translate(100vw, 0);
             }
         }
-
-        /* Styles pour une meilleure adaptabilité à n'importe quel écran */
-        @media only screen and (max-width: 600px) {
-            .animated-text {
-                font-size: 2em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -89,8 +84,8 @@
     <h1 id="ageText" class="animated-text">30 ans</h1>
     <h1 id="candlesText" class="animated-text">Bougies</h1>
 
-    <img class="animated-gif top-left" src="explosion.gif" alt="Description du GIF">
-    <img class="animated-gif top-right" src="batman.gif" alt="Description du GIF 2">
+    <img class="animated-gif top-left" src="gifs/explosion.gif" alt="Description du GIF">
+    <img class="animated-gif top-right" src="gifs/batman.gif" alt="Description du GIF 2">
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

@@ -34,14 +34,19 @@
             color: #00f;
         }
 
+        #candlesText {
+            color: #0f0; /* Couleur du texte "Bougies" */
+            animation: moveCandles 10s infinite;
+        }
+
         .animated-gif {
             position: absolute;
             width: 100px;
         }
 
         .top-left {
-            top: -10px;
-            left: -10px;
+            top: 30px;
+            left: 10px;
         }
 
         .top-right {
@@ -63,11 +68,21 @@
                 transform: translate(-50vw, 50vh);
             }
         }
+
+        @keyframes moveCandles {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(100vw, 0);
+            }
+        }
     </style>
 </head>
 <body>
     <h1 id="birthdayText" class="animated-text">Joyeux anniversaire</h1>
     <h1 id="ageText" class="animated-text">30 ans</h1>
+    <h1 id="candlesText" class="animated-text">Bougies</h1>
 
     <img class="animated-gif top-left" src="explosion.gif" alt="Description du GIF">
     <img class="animated-gif top-right" src="batman.gif" alt="Description du GIF 2">

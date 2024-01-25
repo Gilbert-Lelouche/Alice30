@@ -53,6 +53,11 @@
             color: #f0f; /* Couleur du texte 3 */
             animation: moveText3 10s infinite;
         }
+        
+         #text4 {
+            color: #fff; /* Couleur du texte 4 */
+            animation: moveText4 10s infinite;
+        }
 
         .animated-gif {
             position: absolute;
@@ -136,10 +141,29 @@
             75% {
                 transform: translate(50vw, -50vh);
             }
+
+        @keyframes moveText4 {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(-20vw, 20vh);
+            }
+            50% {
+                transform: translate(0, 0);
+            }
+            75% {
+                transform: translate(20vw, -20vh);
+            }
         }
     </style>
 </head>
 <body>
+    <audio controls autoplay loop>
+        <source src="musique.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
     <a href="https://www.youtube.com/watch?v=HjXxvooa-0g" target="_blank">
         <h1 id="birthdayText" class="animated-text">Joyeux Anniversaire</h1>
     </a>
@@ -156,12 +180,16 @@
         <h1 id="text1" class="animated-text">Noel</h1>
     </a>
     
-    <a href="https://fr.wikipedia.org/wiki/Alice_Halter" target="_blank">
+    <a href="https://www.youtube.com/shorts/7fTHD07Q9Pw" target="_blank">
         <h1 id="text2" class="animated-text">Alice</h1>
     </a>
     
-    <a href="https://www.example6.com" target="_blank">
+    <a href="https://www.taste.com.au/recipes/anns-melomakarona-honey-biscuits/eae85bae-a52a-4ded-bad7-e3e80f81cf17?r=baking/ycuY2gV3" target="_blank">
         <h1 id="text3" class="animated-text">Gateau</h1>
+    </a>
+
+    <a href="https://www.youtube.com/shorts/7fTHD07Q9Pw" target="_blank">
+        <h1 id="text4" class="animated-text">Alice</h1>
     </a>
 
     <a href="https://www.youtube.com/watch?v=t1d6ZzV6iNo" target="_blank">

@@ -36,6 +36,7 @@
 
         .animated-gif {
             position: absolute;
+            width: 100px; /* Ajustez la largeur selon vos préférences */
             animation: moveGif 10s infinite;
         }
 
@@ -59,13 +60,13 @@
                 transform: translate(0, 0);
             }
             25% {
-                transform: translate(-30vw, -30vh);
+                transform: translate(30vw, -30vh);
             }
             50% {
                 transform: translate(0, 0);
             }
             75% {
-                transform: translate(30vw, 30vh);
+                transform: translate(-30vw, 30vh);
             }
         }
     </style>
@@ -74,8 +75,8 @@
     <h1 id="birthdayText" class="animated-text">Joyeux anniversaire</h1>
     <h1 id="ageText" class="animated-text">30 ans</h1>
 
-    <img class="animated-gif" src="explosion.gif" alt="BOUM">
-    <img class="animated-gif" src="batman.gif" alt="woush">
+    <img class="animated-gif" src="explosion.gif" alt="BOOMF">
+    <img class="animated-gif" src="batman.gif" alt="WOUSH">
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
